@@ -4,32 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aee22c7d-c834-4238-a692-9c9c2de77025" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laba6user.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gorod/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gorod/Climate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gorod/Coordinates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gorod/Government.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gorod/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gorod/StandardOfLiving.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/CollectingDataForCityCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/CollectingDataForGovernor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/CommandManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/Readline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/SendRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/Serialisation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/Serialisation2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/Serialisation3.java" afterDir="false" />
+    <list default="true" id="aee22c7d-c834-4238-a692-9c9c2de77025" name="Changes" comment="almost works">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +51,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.user.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="laba6user" />
@@ -103,7 +80,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.user.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainUser" />
       </list>
     </recent_temporary>
@@ -119,8 +96,21 @@
       <workItem from="1653230520805" duration="9214000" />
       <workItem from="1653309009825" duration="4092000" />
       <workItem from="1653319750567" duration="2468000" />
-      <workItem from="1653380683287" duration="41224000" />
+      <workItem from="1653380683287" duration="41425000" />
+      <workItem from="1653767920533" duration="1823000" />
+      <workItem from="1653824212921" duration="635000" />
+      <workItem from="1653946102142" duration="2308000" />
+      <workItem from="1653987503611" duration="3545000" />
+      <workItem from="1653994287368" duration="382000" />
     </task>
+    <task id="LOCAL-00001" summary="almost works">
+      <created>1653767774950</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653767774950</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +129,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="almost works" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -147,7 +139,17 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Client.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="bufferArray[0]" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
