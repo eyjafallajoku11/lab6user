@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aee22c7d-c834-4238-a692-9c9c2de77025" name="Changes" comment="разделяем на пакеты">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="aee22c7d-c834-4238-a692-9c9c2de77025" name="Changes" comment="отправка пакетами" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +101,7 @@
       <workItem from="1653994287368" duration="382000" />
       <workItem from="1653994744653" duration="26000" />
       <workItem from="1654003398749" duration="130000" />
-      <workItem from="1654014668573" duration="7330000" />
+      <workItem from="1654014668573" duration="7557000" />
     </task>
     <task id="LOCAL-00001" summary="almost works">
       <created>1653767774950</created>
@@ -121,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653994760417</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="отправка пакетами">
+      <created>1654193555098</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654193555098</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +145,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="almost works" />
     <MESSAGE value="разделяем на пакеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="разделяем на пакеты" />
+    <MESSAGE value="отправка пакетами" />
+    <option name="LAST_COMMIT_MESSAGE" value="отправка пакетами" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
