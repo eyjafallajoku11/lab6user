@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aee22c7d-c834-4238-a692-9c9c2de77025" name="Changes" comment="almost works">
+    <list default="true" id="aee22c7d-c834-4238-a692-9c9c2de77025" name="Changes" comment="разделяем на пакеты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +103,9 @@
       <workItem from="1653946102142" duration="2308000" />
       <workItem from="1653987503611" duration="3545000" />
       <workItem from="1653994287368" duration="382000" />
+      <workItem from="1653994744653" duration="26000" />
+      <workItem from="1654003398749" duration="130000" />
+      <workItem from="1654014668573" duration="7330000" />
     </task>
     <task id="LOCAL-00001" summary="almost works">
       <created>1653767774950</created>
@@ -110,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653767774950</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="разделяем на пакеты">
+      <created>1653994760417</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653994760417</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +141,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="almost works" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost works" />
+    <MESSAGE value="разделяем на пакеты" />
+    <option name="LAST_COMMIT_MESSAGE" value="разделяем на пакеты" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -139,11 +151,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

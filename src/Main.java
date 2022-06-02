@@ -88,13 +88,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-            Client.connect(1567);
+        Client.connect(1567);
         while (true) {
             String[] t = readLine();
             Request request = CommandManager.execute(t[0],t[1]);
             out.println(request);
-//            SendRequest.execute(request, 1567);
             Client.sendRequest(request);
+//            Client.getAnswer();
         }
     }
 }
