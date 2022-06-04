@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
+import java.util.Objects;
 
 import static utility.Serialisation2.deserialize;
 import static utility.Serialisation2.serialize;
@@ -34,6 +35,7 @@ public class Client {
             channel.write(ByteBuffer.wrap(serialize(requestData)));
             for (int i = 0; i < size; i++) {
                 channel.write(bufferOut[i]);
+                bufferOut[i].clear();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -49,9 +51,12 @@ public class Client {
             if (i == size-1 && buffer.length % byteBufferSize != 0) stop = (buffer.length % byteBufferSize);
             byte[] temp = new byte[stop];
             System.arraycopy(buffer, i * byteBufferSize, temp, 0, stop);
+            if (!Objects.isNull(bufferOut[i])) {
+                bufferOut[i].clear();
+            }
             bufferOut[i] = ByteBuffer.wrap(temp);
         }
-        return new int[] {byteBufferSize,size};
+        return (new int[] {byteBufferSize,size});
     }
 
     public static void getAnswer(int[] bufferData){
@@ -61,13 +66,12 @@ public class Client {
         System.out.println(size);
         try {
             for (int i=0; i < size; i++) {
+                bufferIn.clear();
                 channel.read(bufferIn);
 //                System.out.println("прочитали канал");
                 input = combineArray(input, bufferIn.array());
-                System.out.println(input.length);
-                bufferIn.clear();
             }
-                System.out.println(new String(input));
+            System.out.println(new String(input));
         } catch (SocketException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
