@@ -10,7 +10,6 @@ import static utility.Serialisation2.deserialize;
 import static utility.Serialisation2.serialize;
 
 public class Client {
-
     private static SocketChannel channel;
     private final static String hostName = "localhost";
     private static SocketAddress inetSocketAddress;
