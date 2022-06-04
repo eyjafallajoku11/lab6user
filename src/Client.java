@@ -14,7 +14,6 @@ public class Client {
     private static SocketChannel channel;
     private final static String hostName = "localhost";
     private static SocketAddress inetSocketAddress;
-
     private static ByteBuffer[] bufferOut;
     private static ByteBuffer bufferIn;
     public static void connect(int port) {
@@ -58,18 +57,17 @@ public class Client {
         }
         return (new int[] {byteBufferSize,size});
     }
-
     public static void getAnswer(int[] bufferData){
         bufferIn = ByteBuffer.allocate(bufferData[0]);
         int size = bufferData[1];
         byte[] input = new byte[0];
-        System.out.println(size);
+//        System.out.println(size);
         try {
             for (int i=0; i < size; i++) {
                 bufferIn.clear();
-                channel.read(bufferIn);
+                int lenght = channel.read(bufferIn);
 //                System.out.println("прочитали канал");
-                input = combineArray(input, bufferIn.array());
+                input = combineArray(input, bufferIn.array(), lenght);
             }
             System.out.println(new String(input));
         } catch (SocketException e) {
@@ -91,10 +89,10 @@ public class Client {
         }
         return data;
     }
-    private static byte[] combineArray(byte[] arr1, byte[] arr2){
+    private static byte[] combineArray(byte[] arr1, byte[] arr2, int length){
         byte[] arr = new byte[arr1.length+arr2.length];
         System.arraycopy(arr1, 0, arr, 0, arr1.length);
-        System.arraycopy(arr2, 0, arr, arr1.length, arr2.length);
+        System.arraycopy(arr2, 0, arr, arr1.length, length);
         return arr;
     }
 
