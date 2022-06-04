@@ -53,6 +53,7 @@ import utility.Request;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 import static java.lang.System.in;
 import static java.lang.System.out;
@@ -93,8 +94,10 @@ public class Main {
             String[] t = readLine();
             Request request = CommandManager.execute(t[0],t[1]);
 //            out.println(request);
-            Client.sendRequest(request);
-            Client.getAnswer(Client.getAnswerData());
+            if (!Objects.isNull(request)) {
+                Client.sendRequest(request);
+                Client.getAnswer(Client.getAnswerData());
+            }
         }
     }
 }
