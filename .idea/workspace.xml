@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aee22c7d-c834-4238-a692-9c9c2de77025" name="Changes" comment="отправка пакетами" />
+    <list default="true" id="aee22c7d-c834-4238-a692-9c9c2de77025" name="Changes" comment="отправка пакетами">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,6 +106,8 @@
       <workItem from="1653994744653" duration="26000" />
       <workItem from="1654003398749" duration="130000" />
       <workItem from="1654014668573" duration="7557000" />
+      <workItem from="1654193639987" duration="232000" />
+      <workItem from="1654346587184" duration="7025000" />
     </task>
     <task id="LOCAL-00001" summary="almost works">
       <created>1653767774950</created>
@@ -124,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654193555098</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="отправка пакетами">
+      <created>1654193867884</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654193867884</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

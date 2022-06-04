@@ -40,7 +40,7 @@ public class Client {
         }
     }
     public static int[] split(byte[] buffer) {
-        int byteBufferSize = 100;
+        int byteBufferSize = 1024;
         int size = (int) Math.ceil((double) buffer.length / byteBufferSize);
 //        System.out.println(size);
         int stop = byteBufferSize;
@@ -54,13 +54,44 @@ public class Client {
         return new int[] {byteBufferSize,size};
     }
 
-    public static void getAnswer(){
-        bufferIn = ByteBuffer.allocate(1024);
+    public static void getAnswer(int[] bufferData){
+        bufferIn = ByteBuffer.allocate(bufferData[0]);
+        int size = bufferData[1];
+        byte[] input = new byte[0];
+        System.out.println(size);
         try {
-            channel.read(bufferOut);
-            System.out.println((String) deserialize(bufferIn.array()));
+            for (int i=0; i < size; i++) {
+                channel.read(bufferIn);
+//                System.out.println("прочитали канал");
+                input = combineArray(input, bufferIn.array());
+                System.out.println(input.length);
+                bufferIn.clear();
+            }
+                System.out.println(new String(input));
+        } catch (SocketException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
-            System.out.println("ждём");
+            throw new RuntimeException(e);
         }
     }
+    public static int[] getAnswerData(){
+        int[] data;
+        ByteBuffer byteBuffer = ByteBuffer.allocate(256);
+        try {
+            channel.read(byteBuffer);
+            data = deserialize(byteBuffer.array());
+        } catch (SocketException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return data;
+    }
+    private static byte[] combineArray(byte[] arr1, byte[] arr2){
+        byte[] arr = new byte[arr1.length+arr2.length];
+        System.arraycopy(arr1, 0, arr, 0, arr1.length);
+        System.arraycopy(arr2, 0, arr, arr1.length, arr2.length);
+        return arr;
+    }
+
 }

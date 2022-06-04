@@ -92,9 +92,9 @@ public class Main {
         while (true) {
             String[] t = readLine();
             Request request = CommandManager.execute(t[0],t[1]);
-            out.println(request);
+//            out.println(request);
             Client.sendRequest(request);
-//            Client.getAnswer();
+            Client.getAnswer(Client.getAnswerData());
         }
     }
 }
