@@ -5,14 +5,21 @@ import java.util.HashSet;
 
 public class CommandManager {
     private static final HashSet<String> dataCommand = new HashSet<>(Arrays.asList(new String[]{"open", "remove_key", "remove_all_by_government"}));
-    private static final HashSet<String> creatorCommand = new HashSet<>(Arrays.asList( new String[]{"remove_lower", "insert", "update", "replace_if_grater"}));
+    private static final HashSet<String> creatorCommand = new HashSet<>(Arrays.asList( new String[]{"remove_lower", "insert", "update", "replace_if_greater"}));
     private static final HashSet<String> humanCommand = new HashSet<>(Arrays.asList( new String[]{"filter_less_than_governor"}));
-    private static final HashSet<String> bareCommand = new HashSet<>(Arrays.asList( new String[]{"help", "exit", "show", "clear", "print_decending", "history", "info"}));
+    private static final HashSet<String> bareCommand = new HashSet<>(Arrays.asList( new String[]{"help", "exit", "show", "clear", "print_descending", "history", "info"}));
 
     public static Request execute(String commandname, String data) {
         Request request = null;
         if (!commandname.equals("")){
-            if (dataCommand.contains(commandname)) {
+            if (commandname.equals("exit")){
+                Client.closeConnection();
+                System.exit(0);
+            }
+            else if (commandname.equals("save")){
+
+            }
+            else if (dataCommand.contains(commandname)) {
                 request = new Request(commandname);
                 request.setDataArgument(data);
             } else if (creatorCommand.contains(commandname)) {

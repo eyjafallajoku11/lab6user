@@ -44,10 +44,11 @@
 //        }
 //    }
 //}
-//        Client client = new Client();
+//        utility.Client client = new utility.Client();
 //                client.startConnection("localhost",1567);
 //                client.sendMessage("test");
 
+import utility.Client;
 import utility.CommandManager;
 import utility.Request;
 
@@ -91,12 +92,15 @@ public class Main {
     public static void main(String[] args) {
         Client.connect(1567);
         while (true) {
+            out.print(": ");
             String[] t = readLine();
             Request request = CommandManager.execute(t[0],t[1]);
-//            out.println(request);
             if (!Objects.isNull(request)) {
                 Client.sendRequest(request);
-                Client.getAnswer(Client.getAnswerData());
+                int[] data = Client.getAnswerData();
+                if (!Objects.isNull(data)) {
+                    Client.getAnswer(data);
+                }
             }
         }
     }
