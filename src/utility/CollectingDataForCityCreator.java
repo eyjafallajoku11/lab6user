@@ -50,7 +50,7 @@ public class CollectingDataForCityCreator {
                 creator[i] = null;
             }
         }
-        out.println(Arrays.toString(creator));
+//        out.println(Arrays.toString(creator));
         return creator;
     }
 

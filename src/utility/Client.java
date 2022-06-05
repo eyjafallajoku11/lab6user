@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
+import java.util.Arrays;
 import java.util.Objects;
 
 import static utility.Serialisation2.deserialize;
@@ -20,13 +21,15 @@ public class Client {
     private static int port;
     public static void connect(int portNumber) {
         try {
+            System.out.println("попытка подключения");
             port = portNumber;
             inetSocketAddress = new InetSocketAddress(hostName, port);
             channel = SocketChannel.open(inetSocketAddress);
+            channel.configureBlocking(false);
             System.out.println(String.format("Подключено к удаленному адресу %s по порту %d", hostName, port));
         } catch (IOException e) {
             try {
-                Thread.sleep(250);
+                Thread.sleep(333);
             } catch (InterruptedException ex) {
                 throw new RuntimeException(ex);
             }
@@ -35,8 +38,8 @@ public class Client {
     }
 
     public static void reconnect(){
+        System.out.println("попытка подключения");
         try {
-            inetSocketAddress = new InetSocketAddress(hostName, port);
             channel = SocketChannel.open(inetSocketAddress);
             System.out.println(String.format("Подключено к удаленному адресу %s по порту %d", hostName, port));
         } catch (IOException e) {
@@ -50,18 +53,19 @@ public class Client {
 
     }
     public static void sendRequest(Request request) {
-        System.out.println("пытаемся");
+//        System.out.println("пытаемся");
         try {
             byte[] buf;
             buf = serialize(request);
             int[] requestData = split(buf);
             int size = requestData[1];
             channel.write(ByteBuffer.wrap(serialize(requestData)));
-            System.out.println("данные отправлены");
+//            System.out.println("данные отправлены");
             for (int i = 0; i < size; i++) {
+                Thread.sleep(5);
                 channel.write(bufferOut[i]);
                 bufferOut[i].clear();
-                System.out.println("пакет отправлен");
+//                System.out.println("пакет отправлен");
             }
         } catch (IOException e) {
             try {
@@ -70,8 +74,10 @@ public class Client {
                 throw new RuntimeException(ex);
             }
             reconnect();
-            System.out.println("приконектились");
+//            System.out.println("приконектились");
             sendRequest(request);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
     public static int[] split(byte[] buffer) {
@@ -88,6 +94,7 @@ public class Client {
         return (new int[] {byteBufferSize,size});
     }
     public static void getAnswer(int[] bufferData){
+//        System.out.println("answer");
         bufferIn = ByteBuffer.allocate(bufferData[0]);
         int size = bufferData[1];
         byte[] input = new byte[0];
@@ -95,9 +102,9 @@ public class Client {
             for (int i=0; i < size; i++) {
                 bufferIn.clear();
                 int length = 0;
-//                while (bufferIn.position() == 0){
+                while (length == 0) {
                     length = channel.read(bufferIn);
-//                }
+                }
                 input = combineArray(input, bufferIn.array(), length);
             }
             System.out.println(new String(input));
@@ -108,21 +115,22 @@ public class Client {
                 throw new RuntimeException(ex);
             }
             reconnect();
-//            getAnswer(bufferData);
+            getAnswer(bufferData);
+//            throw new RuntimeException(e);
 
         }
     }
     public static int[] getAnswerData(){
-//        System.out.println("хочу данные прочитать");
+        System.out.println("хочу данные прочитать");
         int[] data = null;
-        ByteBuffer byteBuffer = ByteBuffer.allocate(256);
+        ByteBuffer byteBuffer = ByteBuffer.allocate(128);
         try {
             byteBuffer.clear();
-//            while (byteBuffer.position() == 0) {
-                channel.read(byteBuffer);
-//            }
+            int length = 0;
+            while (length==0) {
+                length = channel.read(byteBuffer);
+            }
             data = deserialize(byteBuffer.array());
-            System.out.println(data[1]);
         }  catch (Exception e) {
             try {
                 Thread.sleep(333);
@@ -130,7 +138,8 @@ public class Client {
                 throw new RuntimeException(ex);
             }
             reconnect();
-//            getAnswerData();
+            getAnswerData();
+//            throw new RuntimeException(e);
         }
         return data;
     }
