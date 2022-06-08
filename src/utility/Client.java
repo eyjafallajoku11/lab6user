@@ -60,12 +60,10 @@ public class Client {
             int[] requestData = split(buf);
             int size = requestData[1];
             channel.write(ByteBuffer.wrap(serialize(requestData)));
-//            System.out.println("данные отправлены");
             for (int i = 0; i < size; i++) {
-                Thread.sleep(5);
+                Thread.sleep(1);
                 channel.write(bufferOut[i]);
                 bufferOut[i].clear();
-//                System.out.println("пакет отправлен");
             }
         } catch (IOException e) {
             try {
@@ -121,7 +119,7 @@ public class Client {
         }
     }
     public static int[] getAnswerData(){
-        System.out.println("хочу данные прочитать");
+//        System.out.println("хочу данные прочитать");
         int[] data = null;
         ByteBuffer byteBuffer = ByteBuffer.allocate(128);
         try {
